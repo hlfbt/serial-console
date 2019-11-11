@@ -90,7 +90,7 @@ def get_console_open_args(args: argparse.Namespace):
 
 def print_prompt(prompt: Union[str, Type[re.Match]]):
     if isinstance(prompt, re.Match):
-        def p(k, v): print('{}\t{}'.format(k, v))
+        def p(k, v): print('{}\t{}'.format(k, '' if v is None else v))
         p(0, prompt.group(0))
         for i, grp in enumerate(prompt.groups(), 1):
             p(i, grp)
