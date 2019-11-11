@@ -1,1 +1,1 @@
-import serial_console.console as console
+from . import console
