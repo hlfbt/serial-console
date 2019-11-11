@@ -48,7 +48,8 @@ def get_args():
                               'Escape sequences will be replaced (i.e. \\n becomes a literal newline).',
                               'LOCAL may be an empty string.'])
     parser.add_argument('-u', '--unbuffered', action='store_true', help='')
-    parser.add_argument('-g', '--get-prompt', action='store_true', help='print the parsed prompt after each command execution')
+    parser.add_argument('-g', '--get-prompt', action='store_true', help='print the parsed prompt after each command execution,'
+                                                                        'separated by an End Of Transmission (\\x04) character')
     parser.add_argument('commands', type=escaped_str, metavar='CMD', nargs='+', help='one or multiple commands to send to the console')
     prompt_group = parser.add_mutually_exclusive_group()
     prompt_group.add_argument('-r', '--regex-prompt', metavar='REGEXP', help='a regular expression matching the prompt')
@@ -109,7 +110,7 @@ def main():
         try:
             cli.send(cmd)
             if args.get_prompt:
-                print('\0', end='')
+                print('\4')
                 print_prompt(cli.prompt)
         except TimeoutError:
             status = 1
