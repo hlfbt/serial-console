@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="hlfbt-serial-console",
-    version="0.0.4",
+    version="0.0.5",
     author="Alexander Schulz",
     author_email="alex@nope.bz",
     description="A simple utility to interface with prompt-like (serial) consoles",
