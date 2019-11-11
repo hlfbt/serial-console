@@ -25,5 +25,8 @@ setup(
     ],
     python_requires='>=3.5',
     packages=find_namespace_packages(include=['hlfbt.*']),
-    install_requires=['pyserial']
+    install_requires=['pyserial'],
+    entry_points={
+        'console_scripts': ['serial_console=hlfbt.serial_console.cli:main']
+    }
 )
