@@ -113,7 +113,7 @@ def main():
                 print_prompt(cli.prompt)
         except TimeoutError:
             status = 1
-            print('\x1b[31mCommand timed out:\x1b[0m \'{}\''.format(cmd), file=sys.stderr)
+            print('\x1b[31mCommand timed out:\x1b[0m \'{}\''.format(cmd.strip()), file=sys.stderr)
             print('\x1b[31mBuffer:\x1b[0m', file=sys.stderr)
             print(cli.buffer, file=sys.stderr)
 
