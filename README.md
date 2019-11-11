@@ -1,5 +1,7 @@
 # serial_console
 
+![PyPI](https://img.shields.io/pypi/v/hlfbt-serial-console)
+
 Serial console is a small utility / library that makes it easier to interface with consoles that use a prompt-like interface.  
 Instead of simply waiting until the connection times out, `serial_console` tries to continuously match for a prompt.  
 
@@ -72,7 +74,7 @@ console.open('foo_argument', bar_parameter=123)
 
 ### Dependencies
 
- - **Python v3.5**: Required for `typing` type hinting. Python v3+ may also be used together with the [typing][pypi-typing] package.
+ - **Python 3.5**: Required for `typing` type hinting. Python v3+ may also be used together with the [typing][pypi-typing] package.
  - **[pyserial][pypi-pyserial]**: Required for serial communication.
 
 
