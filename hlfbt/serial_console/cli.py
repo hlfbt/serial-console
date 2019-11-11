@@ -37,7 +37,7 @@ def get_args():
         formatter_class=formatter.ParagraphedArgumentDefaultsHelpFormatter
     )
     if parser.prog == '__main__.py':
-        parser.prog = 'python3 -m serial_console'
+        parser.prog = 'python3 -m ' + __package__
     parser.add_argument('-d', '--device', default='/dev/ttyS0', help='a serial device')
     parser.add_argument('-b', '--baud', type=int, default=9600, help='the baudrate of the serial device')
     parser.add_argument('-e', '--encoding', default='ascii', help='the encoding to communicate with')
