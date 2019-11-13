@@ -25,10 +25,16 @@ class Mapping(object):
         self._to_len = len(map_to)
 
     def encode(self, text: str) -> str:
-        return text.replace(self._to_str, self._from_str)
+        if self._to_len > 0:
+            return text.replace(self._to_str, self._from_str)
+        else:
+            return text
 
     def decode(self, text: str) -> str:
-        return text.replace(self._from_str, self._to_str)
+        if self._from_len > 0:
+            return text.replace(self._from_str, self._to_str)
+        else:
+            return text
 
     def map_end(self, buffer: List[str], offset: int = 0) -> None:
         s = -self._from_len
