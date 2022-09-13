@@ -6,13 +6,13 @@ with open("README.md", "r") as fh:
 
 setup(
     name="hlfbt-serial-console",
-    version="0.0.5",
+    version="0.0.6",
     author="Alexander Schulz",
     author_email="alex@nope.bz",
     description="A simple utility to interface with prompt-like (serial) consoles",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/hlfbt/serial_console",
+    url="https://github.com/hlfbt/serial-console",
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
